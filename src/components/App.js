@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Myform from './Myform';
 import Navigation from './Navigation';
 import Loader from './Loader';
@@ -14,37 +13,48 @@ class App extends Component {
         url: "http://127.0.0.1:8000/api/customers"
     }
 
-    getCustomers = async () => {
-        this.setState({ loader: true });
-        const customers = await axios.get(this.state.url);
-        this.setState({ customers: customers.data, loader: false});
+
+    getCustomers = () => {
+        fetch(this.state.url)
+        .then(response => {
+            return response.json();
+        })
+        .then(customers => {
+            this.setState({ customers });
+        })
     };
 
-    deleteCustomer = async id => {
-        this.setState({ loader: true });
-        await axios.delete(`${this.state.url}/${id}`);
+    deleteCustomer = id => {
+        fetch(`${this.state.url}/${id}` , {
+            method: 'DELETE',
+        }).then(response => response.json());
         this.getCustomers();
     }
 
-    createCustomer = async data => {
-        this.setState({ loader: true });
-        await axios.post(this.state.url, {
-            first_name: data.first_name,
-            last_name: data.last_name,
-            email: data.email
-        })
-
+    createCustomer =  data => {
+        fetch(this.state.url, {
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            method: 'post',
+            body: JSON.stringify({
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email
+            })
+        }).then(response => response.json());
         this.getCustomers();
     }
 
-    editCustomer = async (data) => {
+    editCustomer = data => {
         this.setState({ customer: {}, loader: true });
-
-        await axios.put(`${this.state.url}/${data.id}`, {
-            first_name: data.first_name,
-            last_name: data.last_name, 
-            email: data.email
-        });
+        fetch(`${this.state.url}/${data.id}`, {
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            method: 'put',
+            body: JSON.stringify({
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email
+            })
+        }).then(response => response.json());
         this.getCustomers();
     }
 
@@ -55,11 +65,13 @@ class App extends Component {
     onDelete = (id) => {
         //console.log("app ", id);
         this.deleteCustomer(id);
+        this.getCustomers();
     };
 
     onEdit = data => {
         //console.log("app ", data);
-        this.setState({customer: data})
+        this.setState({customer: data});
+
     };
 
     onFormSubmit = data => {
@@ -67,9 +79,12 @@ class App extends Component {
         if(data.isEdit) {
             // if is edit true
             this.editCustomer(data);
+            this.getCustomers();
         }else {
             //if is edit false 
             this.createCustomer(data);
+            this.getCustomers();
+
         }
 
     }
@@ -78,7 +93,7 @@ class App extends Component {
         return(
             <div className="App">
 
-                <Navigation />
+                <Navigation title="Contacts"/>
 
                 <div className="container">
                     <div className="row">

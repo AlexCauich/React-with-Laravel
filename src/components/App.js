@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Myform from './Myform';
 import Navigation from './Navigation';
-import Loader from './Loader';
+import Loaders from './Loader';
 import './app.css';
 import CustomerList from './CustomerList';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 
 class App extends Component {
     state = {
@@ -101,7 +103,7 @@ class App extends Component {
                             customer={this.state.customer}
                             onFormSubmit={this.onFormSubmit}    
                             />
-                        {this.state.loader ? <Loader /> : ""}
+                        {this.state.loader ? <Loaders /> : ""}
                         <CustomerList 
                             customers={this.state.customers}
                             onDelete={this.onDelete}

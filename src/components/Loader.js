@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-class Loader extends Component {
+
+class Loaders extends Component {
     render() {
         return(
-            <div className="active inverted dimmer">
-                <div className="loader">
-
-                </div>
+            <div class="loader-background">
+                <div class="loader"></div>
             </div>
         )
     }
 }
 
-export default Loader;
+export default Loaders;

@@ -16,7 +16,7 @@ class Customer extends Component {
         const { id, first_name, last_name, email } = this.props.customer;
         return (
             <tr>
-                <td> {id} </td>
+                <td  className="table-dark"> {id} </td>
                 <td> {`${first_name} ${last_name}`} </td>
                 <td> {email} </td>
                 <td> 

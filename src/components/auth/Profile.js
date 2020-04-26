@@ -11,10 +11,10 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        getProfile().then(res => {
+        getProfile().then(resp => {
             this.setState({
-                name: res.user.name,
-                email: res.user.email
+                name: resp.user.name,
+                email: resp.user.email
             })
         })
     }

@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import Myform from './Myform';
-import Navigation from './Navigation';
 import Loaders from './Loader';
 import './app.css';
 import CustomerList from './CustomerList';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+//import auth
+
+import Landing from './auth/Landing';
+import Navbar from './auth/Navbar';
+import Login from './auth/Login';
+import Register from './auth/Register';
+import Profile from './auth/Profile';
+
+
+//fin import 
 
 
 class App extends Component {
@@ -93,11 +104,15 @@ class App extends Component {
 
     render() {
         return(
+            <Router>
             <div className="App">
-
-                <Navigation title="Contacts"/>
-
+                <Navbar />
+                <Route exact path="/" component={Landing}/>
                 <div className="container">
+                    <Route exact path="/register" component={Register}/>
+                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/profile" component={Profile}/>
+
                     <div className="row">
                         <Myform  
                             customer={this.state.customer}
@@ -112,6 +127,7 @@ class App extends Component {
                     </div>
                 </div>
             </div>
+            </Router>
         )
     }
 }

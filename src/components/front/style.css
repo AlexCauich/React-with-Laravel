@@ -1,0 +1,14 @@
+
+
+
+
+.image {
+    background-color: grey;
+    height: 250px;
+}
+
+img {
+    columns: 7;
+    height: 200px; 
+}
+

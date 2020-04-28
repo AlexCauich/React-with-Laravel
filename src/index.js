@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './components/auth/Landing';
+import Home from './components/front/Home';
 
-ReactDOM.render(<Landing />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));  

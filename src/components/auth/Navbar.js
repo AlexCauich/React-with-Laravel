@@ -20,11 +20,6 @@ class Navbar extends Component {
                         Register
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/home" className="nav-link">
-                        Home
-                    </Link>
-                </li>
             </ul>
 
         )
@@ -57,10 +52,12 @@ class Navbar extends Component {
                     <span className="navbar-toggler-item"></span>
                 </button>
 
-                <div id="navbar" className="collapse navbar-collapse justify-content-md-center">
-                    {localStorage.usertoken ? userLink : loginRegLink}
-                </div>
+                <nav className="navbar navbar-dark bg-dark">
+                    <a className="navbar-brand">Navbar</a>
+                        {localStorage.usertoken ? userLink : loginRegLink}
+                </nav>
             </div>
+            
         )
     }
 }

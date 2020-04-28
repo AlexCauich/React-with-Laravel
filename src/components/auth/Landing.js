@@ -7,7 +7,6 @@ import Navbar from './Navbar';
 import Login from './Login';
 import Register from './Register';
 import Profile from './Profile';
-import Home from './Home'
 
 
 
@@ -24,8 +23,7 @@ class Landing extends Component {
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/profile" component={Profile}/>
-                    <Route exact path="/home" component={Home}/>
-                    
+                                    
                 </div>
             </div>
             </Router>

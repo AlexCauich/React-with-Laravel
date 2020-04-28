@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
-
 class Navbar extends Component {
     logOut(e) {
         e.preventDefault();
@@ -19,6 +18,11 @@ class Navbar extends Component {
                 <li className="nav-item">
                     <Link to="/register" className="nav-link">
                         Register
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/home" className="nav-link">
+                        Home
                     </Link>
                 </li>
             </ul>
@@ -54,13 +58,6 @@ class Navbar extends Component {
                 </button>
 
                 <div id="navbar" className="collapse navbar-collapse justify-content-md-center">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link to="/" className="nav-link">
-                                Home
-                            </Link>
-                        </li>
-                    </ul>
                     {localStorage.usertoken ? userLink : loginRegLink}
                 </div>
             </div>

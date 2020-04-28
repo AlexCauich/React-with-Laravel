@@ -62,3 +62,16 @@ export const getProfile = () => {
         console.log(err);
     })
 }
+
+/*export const home = () => {
+    return fetch('http://127.0.0.1:8000/api/home', {
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+    })
+    .then(response => {
+        return response.json();
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+}*/

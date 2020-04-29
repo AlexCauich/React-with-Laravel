@@ -10,7 +10,7 @@ class Myform extends Component {
     isEmpty(obj) {
         return Object.entries(obj).length === 0 && obj.constructor === Object;
     }
-
+    
     componentDidUpdate(prevProps) {
         if(prevProps !== this.props && !this.isEmpty(this.props.customer)) {
             this.setState({

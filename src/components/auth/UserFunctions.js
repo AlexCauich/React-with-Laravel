@@ -63,6 +63,19 @@ export const getProfile = () => {
     })
 }
 
+export const getCustomers = () => {
+    return axios
+    .get('http://127.0.0.1:8000/api/customers', {
+        headers: { Authorization: `Bearer ${localStorage.usertoken}` }
+    }).then(resp => {
+        console.log(resp);
+        return resp.data
+    }).catch(err => {
+        console.log(err);
+    })
+
+}
+
 /*export const home = () => {
     return fetch('http://127.0.0.1:8000/api/home', {
         headers: { "Content-Type": "application/json; charset=utf-8" },

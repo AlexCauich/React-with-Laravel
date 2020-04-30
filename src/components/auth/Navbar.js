@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
+import './style.css';
+
 class Navbar extends Component {
     logOut(e) {
         e.preventDefault();
@@ -9,20 +11,15 @@ class Navbar extends Component {
 
     render() {
         const loginRegLink = (
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link to="/login" className="nav-link">
+            <ul>
+                <li>
+                    <Link to="/login">
                         Login
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/register" className="nav-link">
+                <li>
+                    <Link to="/register">
                         Register
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/" className="nav-link">
-                        Home
                     </Link>
                 </li>
             </ul>
@@ -30,14 +27,15 @@ class Navbar extends Component {
         )
 
         const userLink = (
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link to="/profile" className="nav-link">
+            <ul>
+                <li>
+                    <Link to="/profile">
                         Profile
                     </Link>
+                    
                 </li>
-                <li className="nav-item">
-                    <a href="/" onClick={this.logOut.bind(this)} className="nav-link">
+                <li>
+                    <a href="/" onClick={this.logOut.bind(this)}>
                         Logout
                     </a>
                 </li>
@@ -46,7 +44,7 @@ class Navbar extends Component {
         )
 
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+            /*<nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -57,7 +55,22 @@ class Navbar extends Component {
                         <li>{localStorage.usertoken ? userLink : loginRegLink}</li>
                     </ul>
                 </div>
-            </nav>
+            </nav>*/
+
+            <div className="container">
+                <nav className="nav-main">
+                    <img src="https://insmac.org/uploads/posts/2018-11/1542978938_artpaper.png" alt="" className="nav-brand"/>
+                    <ul className="nav-menu">
+                        {localStorage.usertoken ? userLink : loginRegLink}
+                    </ul>
+                    <ul className="nav-menu-right">
+                        <li> 
+                            <a href="#" className="fas fa-search"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <hr/>
+            </div>
             
         )
     }

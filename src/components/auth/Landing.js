@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-
-
-//import auth
-import Login from './Login';
-import Register from './Register';
-import Profile from './Profile';
-
-
-
-//fin import 
-
-
 
 class Landing extends Component {
     render() {
         return(
-            <Router>
             <div className="App">
-
                 <div className="header-content"> 
                     <h1>Cinque Terre</h1>
                     <h3>Resize the browser window</h3>
@@ -51,7 +36,6 @@ class Landing extends Component {
 
                 <div className="footer-template"> This web page is a part of a demonstration of fluid web design made by w3schools.com. Resize the browser window to see the content respond to the resizing.</div> 
             </div>
-            </Router>
         )
     }
 }

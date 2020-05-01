@@ -1,41 +1,116 @@
 import React, { Component } from 'react';
+import Template from './styles/Template';
 
 class Landing extends Component {
     render() {
         return(
-            <div className="App">
-                <div className="header-content"> 
-                    <h1>Cinque Terre</h1>
-                    <h3>Resize the browser window</h3>
+            <Template>                
+                <header className="showcase">
+                    <h2>Know the trips we have for you</h2>
+                    <p>Sign up if you don't have an account yet</p>
+                    <a className="btn" href="#">Read More <i className="fas fa-angle-double-right"></i></a>
+                </header>
+
+                <div className="container">
+                    <div className="news-cards">
+                        <div>
+                            <img src="https://images.pexels.com/photos/97050/pexels-photo-97050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/1369476/pexels-photo-1369476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/2325307/pexels-photo-2325307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/5943/fashion-coffee-time-lifestyle.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+
+                    <section className="cards-banner-one">
+                        <div className="content">
+                            <h2>Lorem impsum dolor</h2>
+                            <p>lorem impsu dolor sit amot consectionar seductorea lorem impsu dolor sit amot consectionar seductorea</p>
+                            <a href="#" className="btn">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                    </section>
+
+                    <div className="news-cards">
+                        <div>
+                            <img src="https://images.pexels.com/photos/97050/pexels-photo-97050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/1369476/pexels-photo-1369476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w </p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/2325307/pexels-photo-2325307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div>
+                            <img src="https://images.pexels.com/photos/5943/fashion-coffee-time-lifestyle.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="News 1"/>
+                            <h3>lorem30lkñl lkkklk</h3>
+                            <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w</p>
+                            <a href="#">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+
+                    <section className="cards-banner-two">
+                        <div className="content">
+                            <h2>Lorem impsum dolor</h2>
+                            <p>lorem impsu dolor sit amot consectionar seductorea lorem impsu dolor sit amot consectionar seductorea</p>
+                            <a href="#" className="btn">Learn More <i className="fas fa-angle-double-right"></i></a>
+                        </div>
+                    </section>
+
+                    <section className="social">
+                        <p>Follow News</p>
+                        <div className="links">
+                            <a href="#">
+                                <i className="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i className="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i className="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </section>
                 </div>
 
-                <div className="menu-item"> 
-                    <div className="menu">
-                        <div className="menuitem">The Walk</div>
-                        <div className="menuitem">Transport</div>
-                        <div className="menuitem">History</div>
-                        <div className="menuitem">Gallery</div>
-                    </div>
-
-                    <div className="main">
-                        <h2>The Walk</h2>
-                        <p>The walk from Monterosso to Riomaggiore will take you approximately two hours, give or take an hour depending on the weather conditions and your physical shape.</p>
-                        <img className="image-1" src="https://www.w3schools.com/html/img_5terre.jpg"/> 
-                    </div>
-
-                    <div className="right">
-                        <h2>What?</h2>
-                        <p>Cinque Terre comprises five villages: Monterosso, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
-                        <h2>Where?</h2>
-                        <p>On the northwest cost of the Italian Riviera, north of the city La Spezia.</p>
-                        <h2>Price?</h2>
-                        <p>The Walk is free!</p>
+                <div className="footer-links">
+                    <div className="footer-container">
+                        <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w iqjojejiw e8r 8qo8fr q infn9 w</p>
+                        <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w iqjojejiw e8r 8qo8fr q infn9 w</p>
+                        <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w iqjojejiw e8r 8qo8fr q infn9 w</p>
+                        <p>sd sd skdjwekf oewifn ww oiqw oqnqnir iqjojejiw e8r 8qo8fr q infn9 w iqjojejiw e8r 8qo8fr q infn9 w</p>
                     </div>
                 </div>
 
-
-                <div className="footer-template"> This web page is a part of a demonstration of fluid web design made by w3schools.com. Resize the browser window to see the content respond to the resizing.</div> 
-            </div>
+                <footer className="footer">
+                    <h3>News copyright</h3>
+                </footer>
+            </Template>
         )
     }
 }

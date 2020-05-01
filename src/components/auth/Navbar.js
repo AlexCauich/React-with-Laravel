@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
-import './style.css';
 
 class Navbar extends Component {
     logOut(e) {
@@ -11,15 +10,20 @@ class Navbar extends Component {
 
     render() {
         const loginRegLink = (
-            <ul>
-                <li>
-                    <Link to="/login">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link to="/login" className="nav-link">
                         Login
                     </Link>
                 </li>
-                <li>
-                    <Link to="/register">
+                <li className="nav-item">
+                    <Link to="/register" className="nav-link">
                         Register
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        Home
                     </Link>
                 </li>
             </ul>
@@ -27,15 +31,15 @@ class Navbar extends Component {
         )
 
         const userLink = (
-            <ul>
-                <li>
-                    <Link to="/profile">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link to="/profile" className="nav-link">
                         Profile
                     </Link>
                     
                 </li>
-                <li>
-                    <a href="/" onClick={this.logOut.bind(this)}>
+                <li className="nav-item">
+                    <a href="/" onClick={this.logOut.bind(this)} className="nav-link">
                         Logout
                     </a>
                 </li>
@@ -57,23 +61,31 @@ class Navbar extends Component {
                 </div>
             </nav>*/
 
-            <div className="container">
-                <nav className="nav-main">
-                    <img src="https://insmac.org/uploads/posts/2018-11/1542978938_artpaper.png" alt="" className="nav-brand"/>
-                    <ul className="nav-menu">
-                        {localStorage.usertoken ? userLink : loginRegLink}
+
+            /*<nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbar1" className="collapse navbar-collapse justify-content-md-center">
+                    {localStorage.usertoken ? userLink : loginRegLink}
+                </div>
+            </nav>*/    
+
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <a className="navbar-brand" href="/">Travels</a>
+
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li>{localStorage.usertoken ? userLink : loginRegLink}</li>
                     </ul>
-                    <ul className="nav-menu-right">
-                        <li> 
-                            <a href="#" className="fas fa-search"></a>
-                        </li>
-                    </ul>
-                </nav>
-                <hr/>
-            </div>
-            
+                </div>
+            </nav>        
         )
-    }
+    }   
 }
 
 export default withRouter(Navbar);
